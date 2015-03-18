@@ -26,7 +26,7 @@ Clicking on Show API Keys shows you the Write Key, Read Key, and Master API Key.
 
 The Event Explorer contains a dropdown menu of events which have been collected. Clicking on Last 10 Events or Event Properties tell you info about the events you have collected so far. The Last 10 Events functionality is useful when first getting acquainted to the service. 
 
-Note that you'll also see a Delete Collection button, but you generally will never use this as Keen.io says that deleting events are considered not a good practice (https://keen.io/docs/maintenance/#delete-events-maintenance) and take a while to fully delete.
+Note that you'll also see a Delete Collection button, but you generally will never use this, because Keen.io says that [deleting events is considered a bad practice](https://keen.io/docs/maintenance/#delete-events-maintenance) and will take a while to fully delete.
 
 ## About Event Data
 
@@ -42,7 +42,7 @@ And here is an example of event data. All events contain an Action, a Timestamp,
 
 ![Entity Data vs. Event Data](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/08.png)
 
-Event data is schemaless (compared to entity data which is normalized & relational), and it can also contain much more information than is typically tied to a specific entity. The denormalized and schemaless nature of event data is necessary for scaling at a very high volume and for more efficeint data analysis.
+Event data is schemaless (compared to entity data which is normalized & relational), and it can also contain much more information than is typically tied to a specific entity. The denormalized and schemaless nature of event data is necessary for scaling at a very high volume and for more efficient data analysis.
 
 ## Modeling Your Data
 
@@ -67,18 +67,18 @@ I'm an avid coffee drinker, so I've decided I want to log every time I drink a c
 
 ![Coffee](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/10.jpg)
 
-I need to decide on a name of my event, so I think I'll use: `servingsOfCoffee`. I typically like to camelCase my event names, and all of my event data, but that's just me -- feel free to use underscores instead if that's what floats your boat.
+I need to decide on a name for my event, so I think I'll use: `servingsOfCoffee`. I typically like to camelCase my event names, and all of my event data, but that's just me -- feel free to use underscores instead if that's what floats your boat.
 
 Note that I didn't use cupsOfCoffee, sipsOfCoffee, or anything else specific to the serving of coffee because I want to encapsulate all coffee events and don't want to silo my event into an unnecessary specificity. I may be drinking my 8oz steaming cup of Joe, or my cold 6.5oz can of Starbucks DoubleShot Espresso -- so I need to really think of a good descriptive name for my event because I can't change it later. In this case, a serving can be anything coffee related, and can track 6.5oz, 8oz, big gulp 32oz, hot coffee, cold coffee... you get the idea.
 
-Also, note how this differs from entity data. My serving of coffee is very denormalized and allows me to store just about any data related to my coffee drink. I can define other parameters such as whether it `hasSugar` or `hasCream`, if my coffee is `servedIn` a can or mug, or if the `brand` of coffee is Starbucks or Kopi Luwak. I may even decide to add any/all of these, or other properties in the future - the benefit of using a schemaless design allows me to do this.
+Also, note how this differs from entity data. My serving of coffee is very denormalized and allows me to store just about any data related to my coffee drink. I can define other parameters such as whether it `hasSugar` or `hasCream`, if my coffee is `servedIn` a can or mug, or if the `brand` of coffee is Starbucks or Kopi Luwak. I may even decide to add any/all of these, or other properties in the future - I can do this because of the schemaless design.
 
 > **Note:**
 > If you instead wanted to create an event called servingsOfDrinks to store all drinks consumed instead of coffee, you can do that. You can also make it so it logs all drinks consumed by everyone by passing in a unique identifier for each user tied to each drink serving. The sky is the limit, and it depends what you want to log and what you want to do with that data.
 
 ### Where To Event
 
-We can use any of Keen.io's built-in methods to send data. Keen.io really has a great set of SDK's we can choose from to best suit our project or skillset. I'm a PHP and Node.JS guy, but for ease of use I'll be using the cURL method in this tutorial, because it really is the simplest to get going and has just about no prerequisites.
+We can use any of Keen.io's built-in methods to send data. Keen.io really has a great [set of SDK's](https://keen.io/docs/SDKs/) we can choose from to best suit our project or skillset. I'm a PHP and Node.JS guy, but for ease of use I'll be using the cURL method in this tutorial, because it really is the simplest to get going and has just about no prerequisites.
 
 ![SDKs](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/11.png)
 
@@ -87,7 +87,7 @@ Open up command line (or Terminal on Mac), and type curl and hit enter. If you g
 All cURL URL's will start with a format as follows:
 `https://api.keen.io/3.0/projects/<PROJECT_ID>/events/<EVENT_COLLECTION>?api_key=<READ_OR_WRITE_KEY>`
 
-Remember the Project ID and API Keys that were provided to us from our Project Overview page? We'll plug those into the URL above to start formatting our URL. Note that our URL may get a little unwieldy at times, however this is still the simplest method to demonstrate this tutorial, and as long as you break down the URL into different sections you should be able to follow along fairly easily.
+Remember the Project ID and API Keys that were provided to us from our Project Overview page? We'll plug those into the URL above to start formatting our URL. Note that our URL may get a little unwieldy at times, but this is still the simplest method to demonstrate this tutorial. As long as you break down the URL into different sections you should be able to follow along fairly easily.
 
 In this case, the base URL that we will use will be:
 `https://api.keen.io/3.0/projects/5509ba1f59949a13de470f54/events/servingsOfCoffee?api_key=D499FEABD15DB6383BBBFBAA735FD5C0`
@@ -189,7 +189,7 @@ Let's now refresh our event collection, and we should now see five servingsOfCof
 
 ![5 servingsOfCoffee Events](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/16.png)
 
-We can also click Event Properties to see how Keen.io sees the data we are loading in.
+We can also click Event Properties to see how Keen.io interprets our data structure.
 
 ![servingsOfCoffee Event Properties](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/17.png)
 
@@ -257,9 +257,9 @@ Note, that I just took the query parameters, and passed them in with the '--data
 
 ## Conclusion
 
-I really do hope this is enough to get you started using Keen.io, it's really a fantastic service and very easy to use! The analytics portion is well-developed, and you can use JSON responses however you see fit in your own custom implementation.
+I really do hope this is enough to get you started using Keen.io -- it's really a fantastic service and very easy to use! The analytics portion is well-developed, and you can use JSON responses however you see fit in your own custom implementation.
 
 ![Conclusion](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/24.png)
 
-Follow me on twitter [@markshust](https://twitter.com/markshust) to find out more about event data and other info on Keen.io, nodejs, JavaScript, and full stack development.
+Follow me on twitter, [@markshust](https://twitter.com/markshust), to find out more about event data and other info on Keen.io, nodejs, JavaScript, and full stack development.
 
