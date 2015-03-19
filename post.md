@@ -124,25 +124,25 @@ We'll take the URL we just generated above, and put it into a format that cURL w
 
 This basically just passes the sludge1.json data to the URL, and tells cURL that we are sending JSON data. Just paste the above line in Terminal, hit enter, and you should receive the following response: `{"created": true}`
 
-This tells us everything was posted successfully to Keen.io.
+This tells us everything was successfully posted to Keen.io.
 
 ![Congrats](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/12.gif)
 
 If you received any other response, you'll have to debug things to find out where things went wrong, but there really isn't much to go wrong at this point.
 
-From here, we can refresh our Project Overview page and look at our Event Explorer to make sure our event showed up (note that it may take up to 10 seconds between your "created" response from Keen.io and it actually showing up in Keen.io's dataset). Low and behold, we see our servingsOfCoffee event.
+From here, we can refresh our Project Overview page and look at the Event Explorer to make sure our event showed up (note that it may take up to 10 seconds after your "created" response from Keen.io for it to actually show in Keen.io's dataset). Low and behold, we see our servingsOfCoffee event.
 
 ![Project Overview](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/13.png)
 
-If we select it, and click Last 10 Events, we will see our event data that we just passed in:
+If we select it, and click Last 10 Events, we will see the event data that we just passed in:
 
 ![Last 10 Events](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/14.png)
 
-And details on the event:
+And details of the event:
 
 ![Event Detail](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/15.png)
 
-Note that a keen property was added by Keen.io. This property contains a secondary object that contains the timestamp of when our event happened, when the record was created, and a unique identifier for the event. If you were loading in history data or wanted to define an exact date for the event, you can pass in your own datetime in ISO-8601 format for the property `keen.timestamp`. You can find more info on that at Keen.io's [Data Modeling Guide](https://keen.io/docs/event-data-modeling/event-data-intro/#id9).
+Note that a `keen` property was added by Keen.io. This property contains a secondary object that contains the timestamp of when our event happened, when the record was created, and a unique identifier for the event. If you were loading in history data or wanted to define an exact date for the event, you can pass in your own datetime in ISO-8601 format for the property `keen.timestamp`. You can find more info on that at Keen.io's [Data Modeling Guide](https://keen.io/docs/event-data-modeling/event-data-intro/#id9).
 
 #### Create More Events
 
