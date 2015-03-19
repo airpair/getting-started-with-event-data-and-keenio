@@ -48,8 +48,8 @@ Event data is schemaless (compared to entity data which is normalized & relation
 
 There are many similar services out there that are akin to Keen.io, such as Google BigQuery, Segment, and Amazon RedShift (among MANY others). But there are a few things that really set Keen.io apart from the rest:
 
-* **Ease of Use:** I have yet to find another analytical platform that has such a streamlined focus on getting event data into their system so quickly and easily. Other services like BigQuery and RedShift have great use-cases for more technical applications, however, I could not get up and running nearly as quickly on these platforms.
-* **Software-as-a-Service:** Most of the analytical platforms out there are indeed SaaS-based, however others with very compelling similar technologies ([Druid](http://druid.io) comes to mind), are not SaaS-based. Not having to run my own data servers is an enormous benefit, in my time, and the overall scalability of an application.
+* **Ease of Use:** I have yet to find another analytical platform that has such a streamlined focus on getting event data into their system so quickly and easily. Other services like BigQuery and RedShift have great use-cases for more technical applications, however, I could not get up and running nearly as quickly on these other platforms as I could with Keen.io.
+* **Software-as-a-Service:** Most of the analytical platforms out there are indeed SaaS-based, however others with very compelling similar technologies ([Druid](http://druid.io) comes to mind) are not SaaS-based. Not having to run my own data servers is an enormous benefit to my time and overall scalability of my applications.
 * **Available SDK's:** JavaScript, iOS, Android, Java, Node, PHP, Python, Ruby, cURL, .NET, Scala, Parse. Show me another service with this many ways to access their API! It's unbelievably great knowing that I can develop apps in various technologies, and still have complete interoperability between frameworks and languages.
 
 ## Modeling Your Data
