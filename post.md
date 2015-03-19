@@ -269,6 +269,8 @@ Note, that I just took the query parameters, and passed them in with the '--data
 
 I really do hope this is enough to get you started using Keen.io, it's really a fantastic service and very easy to use! The analytics portion is well-developed, and you can use JSON responses however you see fit in your own custom implementation.
 
+For a more advanced usage of what you can do with Keen.io, you can also see my other related blog post on AirPair about [Making a Keen.io Dashboard Realtime by Integrating it with Firebase and D3.js](https://www.airpair.com/firebase/posts/making-a-keenio-dashboard-realtime-by-integrating-it-with-firebase--d3js).
+
 ![Conclusion](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/24.png)
 
 Follow me on twitter [@markshust](https://twitter.com/markshust) to find out more about event data and other info on Keen.io, nodejs, JavaScript, and full stack development.
