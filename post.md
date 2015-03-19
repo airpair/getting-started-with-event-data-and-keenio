@@ -207,7 +207,7 @@ This is useful to make sure numbers are imported as numbers, and strings are imp
 
 ## Visualize your events
 
-Let's head back to our Workbench so we can now see some of that event data in a pretty graphical representation. In our first query, let's say we wanted to find out the number of ounces of coffee which was consumed. We'll select our `servingsOfCoffee` event collection, Analysis Type of `sum`, and Target Property of `numberOfOunces`. Click Run Query!
+Let's head back to the Workbench so we can see some of that event data in a pretty graphical representation. In our first query, let's say we wanted to find out the number of ounces of coffee which was consumed. We'll select our `servingsOfCoffee` event collection, Analysis Type of `sum`, and Target Property of `numberOfOunces`. Click Run Query!
 
 ![servingsOfCoffee Query 1](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/18.png)
 
@@ -223,19 +223,19 @@ Let's also take a look at the tabs again, now that we have data.
 
 ![servingsOfCoffee Query 2 Visualization](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/20.png)
 
-* **JSON**: The JSON representation of our data - note the timeframe starts and ends, and value property, so we can see this data over time.
+* **JSON**: The JSON representation of our data. Note the timeframe start, end, & value properties, which allow us to chart this data over time.
 
 ![servingsOfCoffee Query 2 JSON](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/21.png)
 
-* **JavaScript**: A JavaScript snippet with the parameters filled in. Please, go get the Javascript SDK and get some experience with it -- it's crazy nice! My favorite use of calling Keen.io is with their [Node.JS SDK](https://github.com/keen/keen-js).
+* **JavaScript**: A JavaScript snippet with the parameters filled in. Please, go get the [Javascript SDK](https://github.com/keen/keen-js) and get some experience with it -- it's crazy nice! My favorite use of calling Keen.io is with Node.JS.
 
 ![servingsOfCoffee Query 2 JavaScript](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/22.png)
 
-* **Query URL**: Whoah - I said it will become a mouthful.
+* **Query URL**: Whoah - I said it may become a mouthful. It did.
 
 ![servingsOfCoffee Query 2 JavaScript](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/23.png)
 
-Let's digest the Query URL:
+Let's digest this Query URL:
 ```
 https://api.keen.io/3.0/projects/5509ba1f59949a13de470f54/queries/count?api_key=dd6bb2af8d96aae5d0b3ba99e0781ae255e4598f393d6dbe1d3875176dd6e6ddf5ba5f066ea614ab901b9f468ca3549ce64113e7be439271d1191f2497dba3324d0b029f68ee06464b3e372c384a53759c13357966a1d78e02aa75dc5f0a90f310ac31632d89a2a8f7db00be95729698&event_collection=servingsOfCoffee&timeframe=this_30_minutes&timezone=-14400&interval=minutely
 ```
@@ -262,16 +262,15 @@ We can call this URL again with cURL, but we need to flip the URL around a bit t
 curl --data "api_key=dd6bb2af8d96aae5d0b3ba99e0781ae255e4598f393d6dbe1d3875176dd6e6ddf5ba5f066ea614ab901b9f468ca3549ce64113e7be439271d1191f2497dba3324d0b029f68ee06464b3e372c384a53759c13357966a1d78e02aa75dc5f0a90f310ac31632d89a2a8f7db00be95729698&event_collection=servingsOfCoffee&timeframe=this_30_minutes&timezone=-14400&interval=minutely" https://api.keen.io/3.0/projects/5509ba1f59949a13de470f54/queries/count
 ```
 
-Note, that I just took the query parameters, and passed them in with the '--data' param, and then sent in the Base URL right after. Pasting this in Terminal and hitting enter should render you the same JSON response.
+Note, that I just took the query parameters and passed them in with the '--data' param, and then right after it sent in the Base URL. Pasting this in Terminal and hitting enter should render you the same JSON response as the JSON tab in the Workbench.
 
 
 ## Conclusion
 
-I really do hope this is enough to get you started using Keen.io; it's really a fantastic service and very easy to use! The analytics portion is well-developed, and you can use JSON responses however you see fit in your own custom implementation.
+I really do hope this is enough to get you started using Keen.io; it's really a fantastic service and very fun & easy to use! The analytics portion is well developed, and you can use the JSON responses however you see fit in your own custom implementation.
 
 For a more advanced usage of what you can do with Keen.io, you can also see my other related blog post on AirPair about [Making a Keen.io Dashboard Realtime by Integrating it with Firebase and D3.js](https://www.airpair.com/firebase/posts/making-a-keenio-dashboard-realtime-by-integrating-it-with-firebase--d3js).
 
 ![Conclusion](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/24.png)
 
-Follow me on twitter at [@markshust](https://twitter.com/markshust) to find out more about event data and other info on Keen.io, nodejs, JavaScript, and full stack development.
-
+Follow me on twitter at [@markshust](https://twitter.com/markshust) if you are interesting in hearing me talk more about event data, Keen.io, Node.JS, JavaScript, and full stack development topics.
