@@ -12,7 +12,7 @@ After signing up, you will see a New Project button. Click it to setup your firs
 
 ![Creating New Project](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/02.png)
 
-After creating a new project, you'll be sent to the Project Overview screen which contains some basic data about your project.
+After creating a new project, you'll be sent to the Project Overview screen which contains some basic information about your project.
 
 ![Project Overview](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/03.png)
 
