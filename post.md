@@ -4,7 +4,7 @@ You can think of [Keen.io](http://keen.io) as Software-as-a-Service for analytic
 
 ## Sign Up
 
-It's free to store data in Keen.io for up to 50,000 events. That is plenty of storage to play around with their service and test it out for your needs. The first step is to sign up for an account from [their signup page](https://keen.io/signup).
+It's free to store data in Keen.io for up to 50,000 events. That should be plenty of storage for you to play around with their service and test it out for your needs. The first step is to sign up for an account from [their signup page](https://keen.io/signup).
 
 After signing up, you will see a New Project button. Click it to setup your first project. A Project is a separate database to store your project's data.
 
