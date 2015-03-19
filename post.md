@@ -42,7 +42,7 @@ And here is an example of event data. All events contain an Action, a Timestamp,
 
 ![Entity Data vs. Event Data](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/08.png)
 
-Event data is schemaless (compared to entity data which is normalized & relational), and it can also contain much more information than is typically tied to a specific entity. The denormalized and schemaless nature of event data is necessary for scaling at a very high volume and for more efficeint data analysis.
+Event data is schemaless (compared to entity data which is normalized & relational), and it can also contain much more information than is typically tied to a specific entity. The denormalized and schemaless nature of event data is necessary for scaling at a very high volume and for more efficient data analysis.
 
 ## Why Keen.io?
 
