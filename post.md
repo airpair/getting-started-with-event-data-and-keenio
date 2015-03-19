@@ -77,12 +77,12 @@ I'm an avid coffee drinker, so I've decided I want to log every time I drink a c
 
 I need to decide on a name for my event, so I think I'll use: `servingsOfCoffee`. I typically like to camelCase my event names, and all of my event data, but that's just me -- feel free to use underscores instead if that's what floats your boat.
 
-Note that I didn't use cupsOfCoffee, sipsOfCoffee, or anything else specific to the serving of coffee because I want to encapsulate all coffee events and don't want to silo my event into an unnecessary specificity. I may be drinking my 8oz steaming cup of Joe, or my cold 6.5oz can of Starbucks DoubleShot Espresso -- so I need to really think of a good descriptive name for my event because I can't change it later. In this case, a serving can be anything coffee related, and can track 6.5oz, 8oz, big gulp 32oz, hot coffee, cold coffee... you get the idea.
+Note that I didn't use cupsOfCoffee, sipsOfCoffee, or anything else specific to the serving of coffee because I want to encapsulate all coffee events, and don't want to silo my event into an unnecessary specificity. I may be drinking an 8oz steaming cup of Joe, or a cold 6.5oz can of Starbucks DoubleShot Espresso -- so I need to really think of a good descriptive name for my event because I can't change it later. In this case, a serving can be anything coffee related, and can track 6.5oz, 8oz, big gulp 32oz, hot coffee, cold coffee... you get the idea.
 
-Also, note how this differs from entity data. My serving of coffee is very denormalized and allows me to store just about any data related to my coffee drink. I can define other parameters such as whether it `hasSugar` or `hasCream`, if my coffee is `servedIn` a can or mug, or if the `brand` of coffee is Starbucks or Kopi Luwak. I may even decide to add any/all of these, or other properties in the future - I can do this because of the schemaless design.
+Also, note how this differs from entity data. My serving of coffee is very denormalized and allows me to store just about any data related to my coffee drink. I can define other parameters such as whether it `hasSugar` or `hasCream`, if my coffee is `servedIn` a can or mug, or if the `brand` of coffee is Starbucks or Kopi Luwak. I may even decide to add any/all of these properties, or others in the future - I can do this all because of the schemaless design.
 
 > **Note:**
-> If you instead wanted to create an event called servingsOfDrinks to store all drinks consumed instead of coffee, you can do that. You can also make it so it logs all drinks consumed by everyone by passing in a unique identifier for each user tied to each drink serving. The sky is the limit, and it depends what you want to log and what you want to do with that data.
+> If you instead wanted to create an event called servingsOfDrinks to store all drinks consumed instead of coffee, you can do that. You can also log all drinks consumed by everyone by passing in a unique identifier for each user tied to each drink serving. The sky's the limit, and it depends what you want to log and what you want to do with the data.
 
 I decided to pick a `servingsOfCoffee` event just to show how arbitrary an event can be. We can store **ANY** event data that we wish. Some more examples: what I ate for dinner, how many miles I drive each day, how many customer registrations happen on my website, how long specific light bulbs are on each day... the list never ends. We are entering the world of [Internet of Things (IoT)](http://en.wikipedia.org/wiki/Internet_of_Things), and we will soon be logging any and every event on the planet, and beyond.
 
@@ -92,17 +92,17 @@ We can use any of Keen.io's built-in methods to send data. Keen.io really has a 
 
 ![SDKs](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/11.png)
 
-Open up command line (or Terminal on Mac), and type curl and hit enter. If you get the response `curl: try 'curl --help' or 'curl --manual' for more information` that means you have cURL installed. If you don't have it installed, you can [download cURL](http://curl.haxx.se/download.html).
+Open up command line (or Terminal on Mac), and type curl and hit enter. If you get the response `curl: try 'curl --help' or 'curl --manual' for more information` that means you have cURL installed. If you don't have it installed, go ahead and [download cURL](http://curl.haxx.se/download.html).
 
 All cURL URL's will start with a format as follows:
 `https://api.keen.io/3.0/projects/<PROJECT_ID>/events/<EVENT_COLLECTION>?api_key=<READ_OR_WRITE_KEY>`
 
-Remember the Project ID and API Keys that were provided to us from our Project Overview page? We'll plug those into the URL above to start formatting our URL. Note that our URL may get a little unwieldy at times, but this is still the simplest method to demonstrate this tutorial. As long as you break down the URL into different sections you should be able to follow along fairly easily.
+Remember the Project ID and API Keys that were provided to us from our Project Overview page? We'll plug those into the URL above to start formatting our URL. Note that the URL can get a little unwieldy at times, but this is still the simplest method to demonstrate for the purposes of this tutorial. As long as you break down the URL into different sections, you should be able to follow along fairly easily.
 
 In this case, the base URL that we will use will be:
 `https://api.keen.io/3.0/projects/5509ba1f59949a13de470f54/events/servingsOfCoffee?api_key=D499FEABD15DB6383BBBFBAA735FD5C0`
 
-Note how we just subbed in the Project ID, name of the Event we'll be creating, and our API Key. For the purposes of this demo, we'll just use the Master API Key as it's much shorter and easier to read than the Read and Write Keys. For your project you will almost always want to instead use your Read or Write Keys instead of the Master API Key, as the Master can be used to delete data.
+Note how we just subbed in the Project ID, name of the Event we'll be creating, and our API Key. For the purposes of this demo, we'll just use the Master API Key as it's much shorter and easier to read than the Read and Write Keys. For your project you will almost always want to use the Read or Write Keys instead of the Master API Key, as the Master can be used to delete data.
 
 ### How To Event
 
