@@ -63,8 +63,8 @@ Keen.io's workbench is the workhorse of their admin API. This is the toolset tha
 ![Workbench](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/09.png)
 
 * **Visualization**: Visual representation of the data you are analyzing
-* **JSON**: The JSON response of the representation of the data you are analyzing
-* **JavaScript**: An example JavaScript snippet used to make the same API request using their JavaScript SDK (useful for embedding charts on websites)
+* **JSON**: JSON representation of the data you are analyzing
+* **JavaScript**: An example JavaScript snippet that can be used to make API requests using their JavaScript SDK (useful for embedding charts)
 * **Query URL**: A basic URL that can be very useful when making programmatic calls to Keen.io's API.
 
 ## Creating events
