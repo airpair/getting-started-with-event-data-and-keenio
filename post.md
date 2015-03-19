@@ -1,4 +1,4 @@
-You can think of [Keen.io](http://keen.io) as Software-as-a-Service for analytics: you pass them data, they store it for you, and you query the data using their API. They keep the data layer, backend servers & hardware, and infrastructure running, so you can focus on the numbers as a software developer or data scientist.
+You can think of [Keen.io](http://keen.io) as Software-as-a-Service for analytics: you pass them data, they store it for you, and you query the data using their API. They keep the data layer, backend servers & infrastructure running, so you can focus on the numbers as a software developer or data scientist.
 
 ![Keen.io](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/00.png)
 
