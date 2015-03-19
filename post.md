@@ -4,7 +4,7 @@ You can think of [Keen.io](http://keen.io) as Software-as-a-Service for analytic
 
 ## Sign Up
 
-It's free to store data in Keen.io for up to 50,000 events. That is plenty of storage to play around with their service and test it out for your needs. The first step is to sign up for an account at [their signup page](https://keen.io/signup).
+It's free to store data in Keen.io for up to 50,000 events. That is plenty of storage to play around with their service and test it out for your needs. The first step is to sign up for an account from [their signup page](https://keen.io/signup).
 
 After signing up, you will see a New Project button. Click it to setup your first project. A Project is a separate database to store your project's data.
 
@@ -24,9 +24,9 @@ Clicking on Show API Keys shows you the Write Key, Read Key, and Master API Key.
 
 ![Event Explorer](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/05.png)
 
-The Event Explorer contains a dropdown menu of events which have been collected. Clicking on Last 10 Events or Event Properties tell you info about the events you have collected so far. The Last 10 Events functionality is useful when first getting acquainted to the service. 
+The Event Explorer contains a dropdown menu of events which have been collected. Clicking on the Last 10 Events or Event Properties buttons will tell you the respective information about the events you have collected so far. The Last 10 Events functionality is especially useful when first getting acquainted to the service.
 
-Note that you'll also see a Delete Collection button, but you generally will never use this, because Keen.io says that [deleting events is considered a bad practice](https://keen.io/docs/maintenance/#delete-events-maintenance) and will take a while to fully delete.
+Note that you'll also see a Delete Collection button, but this isn't generally used as [Keen.io considers deleting events a bad practice](https://keen.io/docs/maintenance/#delete-events-maintenance). It's also worthy to note that deleting collections are not immediate, and can take a while to complete.
 
 ## About Event Data
 
@@ -43,6 +43,14 @@ And here is an example of event data. All events contain an Action, a Timestamp,
 ![Entity Data vs. Event Data](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/08.png)
 
 Event data is schemaless (compared to entity data which is normalized & relational), and it can also contain much more information than is typically tied to a specific entity. The denormalized and schemaless nature of event data is necessary for scaling at a very high volume and for more efficient data analysis.
+
+## Why Keen.io?
+
+There are many similar services out there that are akin to Keen.io, such as Google BigQuery, Segment, and Amazon RedShift (among MANY others). But there are a few things that really set Keen.io apart from the rest:
+
+* **Ease of Use:** I have yet to find another analytical platform that has such a streamlined focus on getting event data into their system so quickly and easily. Other services like BigQuery and RedShift have great use-cases for more technical applications, however, I could not get up and running nearly as quickly on these other platforms as I could with Keen.io.
+* **Software-as-a-Service:** Most of the analytical platforms out there are indeed SaaS-based, however others with very compelling similar technologies ([Druid](http://druid.io) comes to mind) are not SaaS-based. Not having to run my own data servers is an enormous benefit to my time and overall scalability of my applications.
+* **Available SDK's:** JavaScript, iOS, Android, Java, Node, PHP, Python, Ruby, cURL, .NET, Scala, Parse. Show me another service with this many ways to access their API! It's unbelievably great knowing that I can develop apps in various technologies, and still have complete interoperability between frameworks and languages.
 
 ## Modeling Your Data
 
@@ -75,6 +83,8 @@ Also, note how this differs from entity data. My serving of coffee is very denor
 
 > **Note:**
 > If you instead wanted to create an event called servingsOfDrinks to store all drinks consumed instead of coffee, you can do that. You can also make it so it logs all drinks consumed by everyone by passing in a unique identifier for each user tied to each drink serving. The sky is the limit, and it depends what you want to log and what you want to do with that data.
+
+I decided to pick a `servingsOfCoffee` event just to show how arbitrary an event can be. We can store **ANY** event data that we wish. Some more examples: what I ate for dinner, how many miles I drive each day, how many customer registrations happen on my website, how long specific light bulbs are on each day... the list never ends. We are entering the world of [Internet of Things (IoT)](http://en.wikipedia.org/wiki/Internet_of_Things), and we will soon be logging any and every event on the planet, and beyond.
 
 ### Where To Event
 
@@ -258,6 +268,8 @@ Note, that I just took the query parameters, and passed them in with the '--data
 ## Conclusion
 
 I really do hope this is enough to get you started using Keen.io -- it's really a fantastic service and very easy to use! The analytics portion is well-developed, and you can use JSON responses however you see fit in your own custom implementation.
+
+For a more advanced usage of what you can do with Keen.io, you can also see my other related blog post on AirPair about [Making a Keen.io Dashboard Realtime by Integrating it with Firebase and D3.js](https://www.airpair.com/firebase/posts/making-a-keenio-dashboard-realtime-by-integrating-it-with-firebase--d3js).
 
 ![Conclusion](https://raw.githubusercontent.com/markoshust/keen-getting-started/master/images/24.png)
 
